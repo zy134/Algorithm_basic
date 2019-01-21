@@ -1,32 +1,92 @@
-# Prerequisites
+﻿# Prerequisites
+
 *.d
 
+
+
 # Compiled Object files
+
 *.slo
+
 *.lo
+
 *.o
+
 *.obj
 
+
+
 # Precompiled Headers
+
 *.gch
+
 *.pch
 
+
+
 # Compiled Dynamic libraries
+
 *.so
+
 *.dylib
+
 *.dll
 
+
+
 # Fortran module files
+
 *.mod
+
 *.smod
 
+
+
 # Compiled Static libraries
+
 *.lai
+
 *.la
+
 *.a
+
 *.lib
 
+
+
 # Executables
+
 *.exe
+
 *.out
+
 *.app
+
+
+
+#visual stdio �����ļ�
+
+Debug/
+
+test/
+/test
+*.sln
+
+*.vcxproj
+
+*.vcxproj.filters
+
+*.vcxproj.user
+
+*.pdb
+
+*.ilk
+
+*.suo
+
+
+
+.gitattributes
+test/test.cpp
+*.db
+6：动态内存/shared_ptr/Debug/shared_ptr.ilk
