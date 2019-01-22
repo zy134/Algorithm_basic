@@ -7,7 +7,7 @@ void Insert_sort(int A[], int p, int r)
 	{
 		int key=A[j];
 		int i=j-1;
-		while (A[i] > A[j] && i >= 0)
+		while (A[i] >key && i >= 0)
 		{
 			A[i+1]=A[i];
 			i=i-1;
@@ -60,4 +60,14 @@ void Merge_Sort(int A[], int p, int r)
 			Merge(A,p,q,r);
 		}
 	}
+}
+int main()
+{
+    int A[]={3,21,4,5,67,45,222,8,98};
+	int p=0,r=8;
+	Merge_Sort(A,p,r);
+	for(auto elem:A)
+	    cout<<"  "<<elem;
+	system("pause");
+	return 0;
 }
