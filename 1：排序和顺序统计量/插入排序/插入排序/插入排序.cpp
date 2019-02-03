@@ -1,6 +1,7 @@
 #include<iostream>
 #include<deque>
 #include<Windows.h>
+#include"Rand_Seq.h"
 using namespace std;
 int main()
 {
@@ -27,11 +28,12 @@ int main()
 			i=i-1
 		A[i+1]=key
 	*/
-
-	int A[]={56,1,2,32,45,988,65,3,23,9};
+	const int n=20;
+	Random_Sequence r(n);
+	int *A=r.return_seq();
 	int i,j;
 
-	for (j = 1; j != 10; j++)
+	for (j = 1; j != n; j++)
 	{
 		i=j-1;
 		int key=A[j];
@@ -43,8 +45,8 @@ int main()
 		A[i+1]=key;
 	}
 
-	for (auto temp : A)
-		cout << "  " << temp;
+	for (int k=0;k!=n;++k)
+	    cout<<A[k]<<"  ";
 	system("pause");
 	return 0;
 }
