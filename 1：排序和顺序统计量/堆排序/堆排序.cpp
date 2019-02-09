@@ -4,7 +4,7 @@
 #include<ctime>
 #include<windows.h>
 using namespace std;
-void Max_Heapify(int *A,const int size,int i)
+void Max_Heapify(int *A,const int size,int i)  //下渗
 {
     int left=2*i;
     int right =2*i+1;
