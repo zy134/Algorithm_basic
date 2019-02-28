@@ -3,7 +3,9 @@
 #include<random>
 #include<ctime>
 using namespace std;
-
+//插入元素，新元素自底向上不断上升至合适的位置
+//插入过程中仍保持堆序性
+//不断插入，就可以建立一个堆了
 void Heap_Inseert(int *A,int key,int* size);
 void Build_Heap(int *A,const int length);
 void Heap_Increase_Key(int*A,int key,int i);   //上升

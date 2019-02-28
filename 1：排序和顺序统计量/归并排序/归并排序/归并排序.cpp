@@ -24,7 +24,12 @@ MERGE_SORT(A,p,r)
 	MERGE_SORT(A,p,q)
 	MERGE_SORT(A,q+1,r)
 	MERGE(A,p,q,r)
+原理：
+    就像两幅已排序的扑克牌，要将他们和成一副扑克牌。应当翻开两个牌顶，取小的那张扑克放入新牌堆。
+	然后刚刚堆顶牌比较小的牌堆再翻开张新牌，再比较两个牌堆的堆顶牌。以此往复。
 
+	归并排序先分后治再合，先将数组不断二分直至不能再分，然后将小数组按上诉规则不断合一，最后得出
+	的合数组就是排序成功的
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -39,7 +44,7 @@ void PrintArr(int *pnArr, int nLen)
 	}
 	printf("\n");
 }
-//�ϲ���������
+//�ϲ���������
 void Merge(int data[], int nLpos, int nRpos, int nRightEnd)
 {
 	int i;
@@ -85,14 +90,14 @@ void MergeSort(int *pnArr, int nLeft, int nRight)
 	}
 	if (nRight > nLeft)
 	{
-		//1�ֽ�
+		//1�ֽ�
 		int nMid = (nLeft + nRight) / 2;
 
-		//2���
+		//2���
 		MergeSort(pnArr, nLeft, nMid);
 		MergeSort(pnArr, nMid + 1, nRight);
 
-		//3�ϲ�
+		//3�ϲ�
 		Merge(pnArr, nLeft, nMid, nRight);
 	}
 }
@@ -105,11 +110,11 @@ int main()
 		nArr[i] = rand() % 100;
 	}
 
-	printf("����ǰ:");
+	printf("����ǰ:");
 	PrintArr(nArr, 10);
 
 	MergeSort(nArr, 0, 9);
-	printf("�����:");
+	printf("�����:");
 	PrintArr(nArr, 10);
 
 	system("pause");

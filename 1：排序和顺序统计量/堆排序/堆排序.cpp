@@ -22,7 +22,7 @@ void Max_Heapify(int *A,const int size,int i)  //下渗
         Max_Heapify(A,size,largest);
     }       
 }
-void Build_Max_Heap(int *A,const int size)
+void Build_Max_Heap(int *A,const int size)    //自底向上建堆,lgN
 {
     for(int i=size/2;i>=0;--i)
         Max_Heapify(A,size,i);
