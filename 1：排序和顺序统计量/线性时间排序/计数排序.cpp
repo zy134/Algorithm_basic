@@ -17,7 +17,7 @@ void count_sort(int A[],int B[],const int length,const int k)
         C[i]+=C[i-1];
     for(int i=length-1;i>=0;--i)       //逆序，用以保证算法的稳定性
     {
-        B[C[A[i]]]=A[i];
+        B[C[A[i]]-1]=A[i];             //与伪代码中的不同，由于数组从0开始，故须-0
         C[A[i]]--;
     }
     delete []C;
