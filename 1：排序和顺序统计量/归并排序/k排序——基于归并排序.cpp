@@ -37,28 +37,30 @@ void merge(int A[],const int beg,const int center,const int end)
     delete []R;
 }
 
-void merge_sort(int A[],const int beg,const int end)
+void k_sort(int A[],const int beg,const int end,const int k)
 {
-    if(beg<end)
+    if(beg<end&&end-beg>=k)
     {
         const int center=(beg+end)/2;
-        merge_sort(A,beg,center);
-        merge_sort(A,center+1,end);
+        k_sort(A,beg,center,k);
+        k_sort(A,center+1,end,k);
         merge(A,beg,center,end);
     }
 }
 
+
+
 int main()
 {
 
-    const int length=20;
+    const int length=9;
     int *A=new int[length];
     
     default_random_engine e(time(0));
     uniform_int_distribution<int> u(0,200);
     for(int i=0;i!=length;++i)
         A[i]=u(e);
-    merge_sort(A,0,length-1);
+    k_sort(A,0,length-1,3);
     for(int i=0;i!=length;++i)
         cout<<A[i]<<"  ";
     delete []A;
@@ -66,10 +68,3 @@ int main()
     return 0;
 }
 
-/*
-    for(int i=0;i!=left_length;++i)
-        cout<<L[i]<<"  ";
-    for(int i=0;i!=right_length;++i)
-        cout<<R[i]<<"  ";
-    cout<<endl;
-*/
