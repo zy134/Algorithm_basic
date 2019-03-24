@@ -26,7 +26,7 @@ int random_parttion(int A[],const int beg,const int end)
     default_random_engine e(time(0));
     uniform_int_distribution<unsigned> u(beg,end);
     int i=u(e);
-    swap(A[i],A[i]);
+    swap(A[i],A[end]);
     return parttion(A,beg,end);
 }
 
