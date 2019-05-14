@@ -1,7 +1,6 @@
 #include<iostream>
 #include<ctime>
 #include<random>
-#include<Windows.h>
 using namespace std;
 /*
 quick_sort的核心思想同样为分治，与归并排序不同的是，快速排序先治再分

@@ -2,7 +2,6 @@
 #include<utility>
 #include<random>
 #include<ctime>
-#include<windows.h>
 using namespace std;
 /*
 模板参数需支持：自增，小于，不等于操作
